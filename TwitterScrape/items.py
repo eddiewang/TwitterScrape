@@ -8,7 +8,8 @@
 import scrapy
 
 
-class TwitterscrapeItem(scrapy.Item):
+class TwitterScrapeItem(scrapy.Item):
     # define the fields for your item here like:
+    name = scrapy.Field()
+    tweet = scrapy.Field()
     # name = scrapy.Field()
-    pass
