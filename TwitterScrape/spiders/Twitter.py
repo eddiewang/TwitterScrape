@@ -1,11 +1,12 @@
 import scrapy
 import html2text
-from scrapy.selector import HtmlXPathSelector
+from scrapy.selector import Selector
 from scrapy.http import Request
-from TwitterScrape.items import TwitterscrapeItem
-from scrapy.selector import 
+from TwitterScrape.items import TwitterScrapeItem
+import time
 #selenium
 from selenium import webdriver
+
 
 class TwitterScraper(scrapy.Spider):
 	name = "twitter"
@@ -17,18 +18,20 @@ class TwitterScraper(scrapy.Spider):
 
 	def parse(self, response):
 		self.driver.get(response.url)
+		time.sleep(2)
+		i = 0
+		while i < 50:
+			self.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+			time.sleep(2)
+			i += 1
+		hxs = Selector(text = self.driver.page_source)
 
-		while True:
-			next = self.driver.
-		n = 10
 		h = html2text.HTML2Text()
-		hxs = HtmlXPathSelector(response)
-		names = hxs.select("//span[@class='username js-action-profile-name']")
-		tweets = hxs.select("//p[@class='js-tweet-text tweet-text']")
-		for name in names:
-			username = name.select("b/text()").extract()
-			print username
-		for tweet in tweets:
-			content = tweet.extract()
-			print h.handle(content)
-
+		content = hxs.xpath("//div[@class='content']")
+		item = TwitterScrapeItem()
+		for stuff in content:
+			item['tweet'] = stuff.xpath("p[@class='js-tweet-text tweet-text']/text()").extract()
+			item['name'] = stuff.xpath("div[@class='stream-item-header']/a/span[@class='username js-action-profile-name']/b/text()").extract()
+			yield item
+			
+#next_steps: NLTK for sentiment analysis (or use API) || Machine Learning might be cool to explore
