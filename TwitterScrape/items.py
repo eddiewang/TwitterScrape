@@ -7,6 +7,13 @@
 
 import scrapy
 
+## MOVIE SCRAPER
+#IMDB
+#RottenTomatoes - Scrape Reviews
+#FB - Brand Webpage Scrape
+#Twitter - Talking
+#LinkedIn - 
+#Sentiment Analysis
 
 class TwitterScrapeItem(scrapy.Item):
     # define the fields for your item here like:

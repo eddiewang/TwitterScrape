@@ -1,0 +1,12 @@
+[INFO  - 2015-04-09T15:57:33.679Z] GhostDriver - Main - running on port 51244
+[INFO  - 2015-04-09T15:57:34.026Z] Session [22bb7840-ded1-11e4-80fd-f1263b39d4e6] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.0.0 Safari/538.1","webSecurityEnabled":true}
+[INFO  - 2015-04-09T15:57:34.026Z] Session [22bb7840-ded1-11e4-80fd-f1263b39d4e6] - page.customHeaders:  - {}
+[INFO  - 2015-04-09T15:57:34.026Z] Session [22bb7840-ded1-11e4-80fd-f1263b39d4e6] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.0.0","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"mac-10.9 (Mavericks)-64bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2015-04-09T15:57:34.026Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: 22bb7840-ded1-11e4-80fd-f1263b39d4e6
+[ERROR - 2015-04-09T15:57:40.271Z] Session [22bb7840-ded1-11e4-80fd-f1263b39d4e6] - page.onError - msg: Player initialization failed: [object HTMLUnknownElement]
+
+  :262 in error
+[ERROR - 2015-04-09T15:57:40.271Z] Session [22bb7840-ded1-11e4-80fd-f1263b39d4e6] - page.onError - stack:
+  (anonymous function) (https://v.cdn.vine.co/vine-fw/card-69f70b245e149a6bd8f17820ab58aef1.js:1)
+
+  :262 in error
