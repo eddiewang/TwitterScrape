@@ -17,6 +17,13 @@ import scrapy
 
 class TwitterScrapeItem(scrapy.Item):
     # define the fields for your item here like:
-    tweet = scrapy.Field()
     name = scrapy.Field()
+    tweet = scrapy.Field()
     # name = scrapy.Field()
+
+class IMDBScrapeItem(scrapy.Item):
+	author_name = scrapy.Field()
+	author_rating = scrapy.Field()
+	author_date = scrapy.Field()
+	review_title = scrapy.Field()
+	review_body = scrapy.Field()
